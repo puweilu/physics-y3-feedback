@@ -6,7 +6,7 @@ window.FEEDBACK_CONFIG = {
 
   // 1. Your Google Form's PRE-FILLED link (Step 2 in SETUP.md).
   //    Paste it between the quotes.
-  prefilledLink: "https://docs.google.com/forms/d/e/1FAIpQLSfHyhUpyWbj5hOrKpNQzOLxX7ppotdOJGWx0nDikg8pFXquQw/viewform?usp=pp_url&entry.2144707698=%60MODULE%60&entry.1578183597=1&entry.502695062=Fair&entry.1526493181=2&entry.2143410204=3&entry.35610482=4&entry.388966301=%60GOOD%60&entry.171067006=+%60BETTER%60",
+  prefilledLink: "https://docs.google.com/forms/d/e/1FAIpQLSfHyhUpyWbj5hOrKpNQzOLxX7ppotdOJGWx0nDikg8pFXquQw/viewform?usp=pp_url&entry.2144707698=MODULE&entry.1578183597=1&entry.502695062=Fair&entry.1526493181=2&entry.2143410204=3&entry.35610482=4&entry.388966301=GOOD&entry.171067006=BETTER",
 
   // 2. Published CSV link of the "Summary" tab (Step 3 in SETUP.md).
   summaryCsvUrl: "https://docs.google.com/spreadsheets/d/e/2PACX-1vTCKqUDjgV60AjLyc69xKIL8s2tX0nlzw6X6VTQQcELQmfQI-tubk9exVXfml2Zn1i814CXAhBc5fHz/pub?gid=1427874595&single=true&output=csv
