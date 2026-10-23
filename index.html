@@ -1,0 +1,243 @@
+<!doctype html>
+<html lang="en-GB">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Physics Year 3 Feedback</title>
+<meta name="description" content="Leave anonymous feedback for Physics Year 3 at the University of Southampton.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap">
+<link rel="stylesheet" href="styles.css">
+<script src="config.js"></script>
+</head>
+<body>
+
+<header class="site-header">
+  <div class="wrap">
+    <a class="brand" href="index.html">
+      <img src="logo.png" alt="University of Southampton" onerror="this.nextElementSibling.remove(); this.remove();">
+      <span class="divider"></span>
+      <span class="name">Physics Year 3 Feedback</span>
+    </a>
+    <nav class="nav" aria-label="Main">
+      <a href="#feedback" aria-current="page">Leave feedback</a>
+      <a href="ratings.html">See ratings</a>
+    </nav>
+  </div>
+</header>
+
+<main>
+  <section class="wrap hero">
+    <div class="pill">Run by your Year 3 Physics Course Rep</div>
+    <h1>Tell us how Year 3 is going. <span>Anonymously.</span></h1>
+    <p class="lead">Your feedback goes straight to your course rep, who takes it to staff at student–staff meetings. We never ask for your name, email or student ID.</p>
+    <div class="actions">
+      <a class="btn btn-primary" href="#feedback">Leave feedback</a>
+      <a class="btn btn-secondary" href="ratings.html">See the ratings</a>
+    </div>
+  </section>
+
+  <section class="wrap points" aria-label="How it works">
+    <div class="card">
+      <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="#1D4ED8" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="4" y="11" width="16" height="10" rx="2"/><path d="M8 11V7a4 4 0 0 1 8 0v4"/></svg>
+      <h3>Fully anonymous</h3>
+      <p>No login, no name, no student ID. Nothing links a response back to you.</p>
+    </div>
+    <div class="card">
+      <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="#1D4ED8" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/></svg>
+      <h3>Raised with staff</h3>
+      <p>Common themes are taken to student–staff meetings so they actually get acted on.</p>
+    </div>
+    <div class="card">
+      <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="#1D4ED8" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 3v18h18"/><path d="M7 15l4-4 3 3 5-6"/></svg>
+      <h3>Shared with the year</h3>
+      <p>Average ratings are posted on the ratings page so everyone can see the picture.</p>
+    </div>
+  </section>
+
+  <section id="feedback" class="wrap" style="padding-bottom: 96px; scroll-margin-top: 16px;">
+    <div class="panel">
+      <div class="panel-head">
+        <h2>Leave anonymous feedback</h2>
+        <p>Eight questions, taking about three minutes. All questions are required unless marked optional.</p>
+      </div>
+
+      <div id="setupNotice" class="notice info" hidden>This form isn't connected yet, so answers won't be saved. Add your Google Form link in <strong>config.js</strong> (see SETUP.md).</div>
+
+      <div id="thanks" class="thanks" hidden>
+        <svg width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="#1D4ED8" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="10"/><path d="M8 12l3 3 5-6"/></svg>
+        <h3 tabindex="-1" id="thanksTitle">Thanks. Your feedback has been sent anonymously.</h3>
+        <p>You can leave feedback on another module any time.</p>
+        <div class="actions" style="padding-top:0">
+          <button type="button" class="btn btn-primary" id="again">Rate another module</button>
+          <a class="btn btn-secondary" href="ratings.html">See the ratings</a>
+        </div>
+      </div>
+
+      <form id="form" novalidate style="display:flex; flex-direction:column; gap:28px;">
+        <div class="field">
+          <label for="module">Module <span class="req">(required)</span></label>
+          <select id="module" name="module" required>
+            <option value="">Choose a module…</option>
+          </select>
+        </div>
+
+        <div class="grid-ratings" id="ratings"></div>
+
+        <div class="grid-text">
+          <div class="field">
+            <label for="improved">Please share something that has improved <span class="req">(optional)</span></label>
+            <textarea id="improved" name="improved" maxlength="1000" placeholder="e.g. clearer lecture notes, quicker marking, better problem classes…"></textarea>
+          </div>
+          <div class="field">
+            <label for="better">What could be better? <span class="req">(required)</span></label>
+            <textarea id="better" name="better" maxlength="2000" placeholder="Please be as specific as possible. It helps when the issue is raised with staff."></textarea>
+          </div>
+        </div>
+
+        <div id="error" class="notice error" role="alert" hidden></div>
+
+        <div class="form-foot">
+          <div class="hint">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#475569" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="4" y="11" width="16" height="10" rx="2"/><path d="M8 11V7a4 4 0 0 1 8 0v4"/></svg>
+            Please don't include names or anything that identifies you or others.
+          </div>
+          <button type="submit" class="btn btn-primary" id="submit">Send anonymously</button>
+        </div>
+      </form>
+    </div>
+  </section>
+</main>
+
+<footer class="site-footer">
+  <div class="wrap">
+    <div id="footRep">Physics Year 3 Feedback</div>
+    <div id="footContact"></div>
+  </div>
+</footer>
+
+<script>
+(function () {
+  var cfg = window.FEEDBACK_CONFIG || {};
+  var Q = ['Poor', 'Fair', 'Good', 'Very good', 'Excellent'];
+  var CATS = [
+    { key: 'overall', label: 'How would you rate this module overall?', labels: Q },
+    { key: 'teaching', label: 'Teaching quality', labels: Q, sendText: true },
+    { key: 'workload', label: 'Workload', labels: ['Too much', 'Heavy', 'Manageable', 'Fairly comfortable', 'Comfortable'] },
+    { key: 'room', label: 'Lecture room environment (temperature, seating, lighting, acoustics)', labels: Q },
+    { key: 'travel', label: 'Travel time between consecutive lectures', labels: ['Not manageable', 'Difficult', 'Manageable', 'Easy', 'Very easy'] }
+  ];
+  var STAR = '<svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2.8l2.8 5.9 6.4.8-4.7 4.4 1.2 6.4L12 17.2l-5.7 3.1 1.2-6.4L2.8 9.5l6.4-.8z"/></svg>';
+  var ratings = {};
+
+  // Footer
+  if (cfg.repName) document.getElementById('footRep').textContent = 'Physics Year 3 Feedback · ' + cfg.repName + ', Year 3 Physics Course Rep';
+  if (cfg.contactEmail) document.getElementById('footContact').textContent = 'Questions? ' + cfg.contactEmail;
+
+  // Modules
+  var sel = document.getElementById('module');
+  (cfg.modules || []).forEach(function (m) {
+    var o = document.createElement('option'); o.value = m; o.textContent = m; sel.appendChild(o);
+  });
+
+  // Star ratings
+  var box = document.getElementById('ratings');
+  CATS.forEach(function (c) {
+    var fs = document.createElement('fieldset');
+    fs.className = 'rating';
+    var lg = document.createElement('legend');
+    lg.textContent = c.label;
+    fs.appendChild(lg);
+    var stars = document.createElement('div'); stars.className = 'stars';
+    var hintText = '1 = ' + c.labels[0] + ', 5 = ' + c.labels[4];
+    var val = document.createElement('div'); val.className = 'rating-value'; val.textContent = hintText;
+    var btns = [];
+    for (var n = 1; n <= 5; n++) {
+      (function (n) {
+        var b = document.createElement('button');
+        b.type = 'button'; b.className = 'star'; b.innerHTML = STAR;
+        b.setAttribute('aria-label', c.label + ': ' + n + ' out of 5, ' + c.labels[n - 1]);
+        b.title = c.labels[n - 1];
+        b.setAttribute('aria-pressed', 'false');
+        b.addEventListener('click', function () {
+          ratings[c.key] = (ratings[c.key] === n) ? 0 : n; // click again to clear
+          paint();
+        });
+        btns.push(b); stars.appendChild(b);
+      })(n);
+    }
+    function paint() {
+      var v = ratings[c.key] || 0;
+      btns.forEach(function (b, i) { b.classList.toggle('on', i < v); b.setAttribute('aria-pressed', String(i < v)); });
+      val.textContent = v ? c.labels[v - 1] + ' (' + v + '/5)' : hintText;
+    }
+    c.paint = paint;
+    fs.appendChild(stars); fs.appendChild(val); box.appendChild(fs);
+  });
+
+  // Read the Google Form pre-filled link -> form action + entry ids
+  function parseForm(link) {
+    try {
+      var u = new URL(link);
+      if (!/docs\.google\.com$/.test(u.hostname) || u.pathname.indexOf('/viewform') < 0) return null;
+      var map = { MODULE: 'module', '1': 'overall', Fair: 'teaching', '2': 'workload', '3': 'room', '4': 'travel', GOOD: 'improved', BETTER: 'better' };
+      var ids = {};
+      u.searchParams.forEach(function (v, k) { if (k.indexOf('entry.') === 0 && map[v.trim()]) ids[map[v.trim()]] = k; });
+      if (!['module', 'overall', 'teaching', 'workload', 'room', 'travel', 'improved', 'better'].every(function (k) { return ids[k]; })) return null;
+      return { action: u.origin + u.pathname.replace('/viewform', '/formResponse'), ids: ids };
+    } catch (e) { return null; }
+  }
+  var target = cfg.prefilledLink ? parseForm(cfg.prefilledLink) : null;
+  if (!target) document.getElementById('setupNotice').hidden = false;
+
+  var form = document.getElementById('form');
+  var err = document.getElementById('error');
+  var submit = document.getElementById('submit');
+  var thanks = document.getElementById('thanks');
+
+  function showError(msg) { err.textContent = msg; err.hidden = false; }
+
+  form.addEventListener('submit', function (e) {
+    e.preventDefault();
+    err.hidden = true;
+    if (!sel.value) { showError('Please select a module.'); sel.focus(); return; }
+    var missing = CATS.filter(function (c) { return !ratings[c.key]; });
+    if (missing.length) { showError('Please answer: ' + missing.map(function (c) { return c.label; }).join('; ') + '.'); return; }
+    var betterEl = document.getElementById('better');
+    if (!betterEl.value.trim()) { showError('Please tell us what could be better.'); betterEl.focus(); return; }
+
+    var values = {
+      module: sel.value,
+      improved: document.getElementById('improved').value.replace(/\s*\n\s*/g, ' ').trim(),
+      better: betterEl.value.trim()
+    };
+    CATS.forEach(function (c) { var v = ratings[c.key]; values[c.key] = c.sendText ? c.labels[v - 1] : v; });
+
+    function done() {
+      form.hidden = true; thanks.hidden = false;
+      document.getElementById('thanksTitle').focus();
+    }
+    if (!target) { done(); return; } // not connected yet: demo only
+
+    var body = new URLSearchParams();
+    Object.keys(target.ids).forEach(function (k) {
+      var v = values[k];
+      if (v !== undefined && v !== null && v !== '' && v !== 0) body.append(target.ids[k], String(v));
+    });
+
+    submit.disabled = true; submit.textContent = 'Sending…';
+    fetch(target.action, { method: 'POST', mode: 'no-cors', body: body })
+      .then(done)
+      .catch(function () { showError("Couldn't send your feedback. Check your internet connection and try again."); })
+      .finally(function () { submit.disabled = false; submit.textContent = 'Send anonymously'; });
+  });
+
+  document.getElementById('again').addEventListener('click', function () {
+    form.reset(); ratings = {}; CATS.forEach(function (c) { c.paint(); });
+    thanks.hidden = true; form.hidden = false; sel.focus();
+  });
+})();
+</script>
+</body>
+</html>
